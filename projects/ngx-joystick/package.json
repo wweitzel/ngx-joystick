@@ -1,0 +1,20 @@
+{
+  "name": "ngx-joystick",
+  "version": "0.0.1",
+  "description": "An angular wrapper around nipplejs providing a joystick component",
+  "author": "Wes Weitzel",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "component",
+    "joystick",
+    "nipplejs"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "nipplejs": "^0.8.1"
+  }
+}

@@ -1,0 +1,73 @@
+<div>Static Joystick</div>
+<div class="container noselect">
+    <div class="zone">
+        <ngx-joystick #staticJoystic
+                        [options]="staticOptions"
+                        (start)="onStartStatic($event)"
+                        (end)="onEndStatic($event)"
+                        (move)="onMoveStatic($event)"
+                        (plainUp)="onPlainUpStatic($event)"
+                        (plainDown)="onPlainDownStatic($event)"
+                        (plainLeft)="onPlainLeftStatic($event)"
+                        (plainRight)="onPlainRightStatic($event)"></ngx-joystick>
+    </div>
+    <div *ngIf="staticOutputData" class="zone-absolute">
+        <div style="float: right;">
+            <div>xPos: {{ staticOutputData.position.x | number:'3.2-2'}}</div>
+            <div>yPos: {{ staticOutputData.position.y | number:'3.2-2'}}</div>
+            <div>dirEvent: {{ directionStatic }}</div>
+            <div>interact: {{ interactingStatic }}</div>
+        </div>
+        <div>frontXPos: {{ staticOutputData.instance.frontPosition.x | number:'2.5-5'}}</div>
+        <div>frontYPos: {{ staticOutputData.instance.frontPosition.y | number:'2.5-5'}}</div>
+        <div>force: {{ staticOutputData.force | number:'1.5-5'}}</div>
+        <div>angle-deg: {{ staticOutputData.angle.degree | number:'3.5-5'}}</div>
+        <div>angle-rad: {{ staticOutputData.angle.radian }}</div>
+        <div>direction: {{ staticOutputData.direction ? staticOutputData.direction.angle : ''}}</div>
+        <div>distance: {{ staticOutputData.distance }}</div>
+    </div>
+</div>
+
+<br>
+
+<div>Semi Joystick</div>
+<div class="container noselect">
+    <div class="zone">
+        <ngx-joystick #semiJoystick [options]="semiOptions" (move)="onMoveSemi($event)"></ngx-joystick>
+    </div>
+    <div *ngIf="semiOutputData" class="zone-absolute" style="z-index: -1;">
+        <div style="float: right;">
+            <div>xPos: {{ semiOutputData.position.x | number:'3.2-2' }}</div>
+            <div>yPos: {{ semiOutputData.position.y | number:'3.2-2' }}</div>
+        </div>
+        <div>frontXPos: {{ semiOutputData.instance.frontPosition.x | number:'2.5-5'}}</div>
+        <div>frontYPos: {{ semiOutputData.instance.frontPosition.y | number:'2.5-5'}}</div>
+        <div>force: {{ semiOutputData.force }}</div>
+        <div>angle-deg: {{ semiOutputData.angle.degree }}</div>
+        <div>angle-rad: {{ semiOutputData.angle.radian }}</div>
+        <div>direction: {{ semiOutputData.direction ? semiOutputData.direction.angle : ''}}</div>
+        <div>distance: {{ semiOutputData.distance }}</div>
+    </div>
+</div>
+
+<br>
+
+<div>Dynamic Joystick</div>
+<div class="container noselect">
+    <div class="zone">
+        <ngx-joystick #dynamicJoystick [options]="dynamicOptions" (move)="onMoveDynamic($event)"></ngx-joystick>
+    </div>
+    <div *ngIf="dynamicOutputData" class="zone-absolute" style="z-index: -1;">
+        <div style="float: right;">
+            <div>xPos: {{ dynamicOutputData.position.x | number:'3.2-2'}}</div>
+            <div>yPos: {{ dynamicOutputData.position.y | number:'3.2-2'}}</div>
+        </div>
+        <div>frontXPos: {{ dynamicOutputData.instance.frontPosition.x | number:'2.5-5'}}</div>
+        <div>frontYPos: {{ dynamicOutputData.instance.frontPosition.y | number:'2.5-5'}}</div>
+        <div>force: {{ dynamicOutputData.force }}</div>
+        <div>angle-deg: {{ dynamicOutputData.angle.degree }}</div>
+        <div>angle-rad: {{ dynamicOutputData.angle.radian }}</div>
+        <div>direction: {{ dynamicOutputData.direction ? dynamicOutputData.direction.angle : ''}}</div>
+        <div>distance: {{ dynamicOutputData.distance }}</div>
+    </div>
+</div>
