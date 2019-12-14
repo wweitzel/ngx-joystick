@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "An angular wrapper around nipplejs providing a joystick component",
   "author": "Wes Weitzel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wweitzel/ngx-joystick.git"
+  },
   "keywords": [
     "angular",
     "javascript",
