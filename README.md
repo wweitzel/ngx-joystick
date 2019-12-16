@@ -8,6 +8,13 @@ This library depends on nipple.js version 0.8.1.
 
 Please run `npm install nipplejs@0.8.1` before running the demo. (Note it MUST be version 0.8.1)
 
+## Installation
+```
+npm install nipplejs@0.8.1
+npm install ngx-joystick
+```
+https://www.npmjs.com/package/ngx-joystick
+
 ## Demo
 
 https://wweitzel.github.io/ngx-joystick/
