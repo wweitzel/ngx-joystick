@@ -16,7 +16,9 @@ export interface JoystickEvent {
 export class NgxJoystickComponent implements OnInit, OnDestroy {
   @Input() options: nipplejs.JoystickManagerOptions;
   @Output() move = new EventEmitter<JoystickEvent>();
+  // tslint:disable-next-line:no-output-native
   @Output() start = new EventEmitter<JoystickEvent>();
+  // tslint:disable-next-line:no-output-native
   @Output() end = new EventEmitter<JoystickEvent>();
   @Output() dir = new EventEmitter<JoystickEvent>();
   @Output() dirUp = new EventEmitter<JoystickEvent>();
@@ -56,7 +58,7 @@ export class NgxJoystickComponent implements OnInit, OnDestroy {
       mode: 'static',
       position: { left: '50%', top: '50%' },
       color: 'blue'
-    }
+    };
     return options;
   }
 
