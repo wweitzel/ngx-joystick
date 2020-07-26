@@ -1,30 +1,39 @@
 # NgxJoystick
 
-NgxJoystick is an angular wrapper around the nipplejs library. It is a component providing joystick functionality to your angular application.
-
-## Dependencies
-
-This library depends on nipple.js version 0.8.1.
-
-Please run `npm install nipplejs@0.8.1` before using this library. (Note it MUST be version 0.8.1)
-
-## Installation
-```
-npm install nipplejs@0.8.1
-npm install ngx-joystick
-```
-https://www.npmjs.com/package/ngx-joystick
+NgxJoystick is an angular joystick component. It is a wrapper around the [nipplejs](https://yoannmoi.net/nipplejs/) library providing joystick functionality to your angular application.
 
 ## Demo
 
 https://wweitzel.github.io/ngx-joystick/
 
-Clone the repo and run `npm install` in the root directory
+---
 
-Run `ng build ngx-joystick` to build the lib
+## Installation
+```
+npm install ngx-joystick
+```
+https://www.npmjs.com/package/ngx-joystick
 
-Run `ng serve` and navigate to `localhost:4200`
+---
 
-## Usage
+## Example Usage
 
-See `src/app/app.component` for usage.
+Import `NgxJoystickModule` in your module. For example,
+```typescript
+import { NgxJoystickModule } from 'ngx-joystick';  <--- Added
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxJoystickModule <--- Added
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+Then see `src/app` files for usage. Make sure to look at the css as well.

@@ -17,19 +17,19 @@ export class AppComponent implements OnInit {
     mode: 'static',
     position: { left: '50%', top: '50%' },
     color: 'blue',
-  }
+  };
 
   dynamicOptions: JoystickManagerOptions = {
     mode: 'dynamic',
     color: 'red',
     multitouch: true
-  }
+  };
 
   semiOptions: JoystickManagerOptions = {
     mode: 'semi',
     catchDistance: 50,
     color: 'purple'
-  }
+  };
 
   staticOutputData: JoystickOutputData;
   semiOutputData: JoystickOutputData;
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   onStartStatic(event: JoystickEvent) {
     this.interactingStatic = true;
   }
-  
+
   onEndStatic(event: JoystickEvent) {
     this.interactingStatic = false;
   }
