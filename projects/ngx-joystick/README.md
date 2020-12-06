@@ -9,8 +9,13 @@ https://wweitzel.github.io/ngx-joystick/
 ---
 
 ## Installation
+For Angular 11 projects
 ```
 npm install ngx-joystick
+```
+For Angular 8 projects
+```
+npm install ngx-joystick@0.1.1
 ```
 https://www.npmjs.com/package/ngx-joystick
 

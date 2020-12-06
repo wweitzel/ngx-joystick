@@ -9,9 +9,9 @@ import { JoystickManagerOptions, JoystickOutputData } from 'nipplejs';
 })
 export class AppComponent implements OnInit {
   title = 'ngx-joystick-demo';
-  @ViewChild('staticJoystic', {static: false}) staticJoystick: NgxJoystickComponent;
-  @ViewChild('dynamicJoystick', {static: false}) dynamicJoystick: NgxJoystickComponent;
-  @ViewChild('semiJoystick', {static: false}) semiJoystick: NgxJoystickComponent;
+  @ViewChild('staticJoystic') staticJoystick: NgxJoystickComponent;
+  @ViewChild('dynamicJoystick') dynamicJoystick: NgxJoystickComponent;
+  @ViewChild('semiJoystick') semiJoystick: NgxJoystickComponent;
 
   staticOptions: JoystickManagerOptions = {
     mode: 'static',

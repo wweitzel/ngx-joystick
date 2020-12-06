@@ -17,7 +17,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "nipplejs": "^0.8.5"
+    "nipplejs": "^0.8.5",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
