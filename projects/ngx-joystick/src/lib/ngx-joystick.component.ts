@@ -34,13 +34,13 @@ export class NgxJoystickComponent implements OnInit, OnDestroy {
   @Output() plainRight = new EventEmitter<JoystickEvent>();
 
   manager: nipplejs.JoystickManager;
-  private interval: NodeJS.Timeout;
+  private interval: number;
 
   constructor(private el: ElementRef) {
   }
 
   ngOnInit() {
-    this.interval = setInterval(() => {
+    this.interval = window.setInterval(() => {
       if (
         this.joystickContainer &&
         this.joystickContainer.nativeElement.clientWidth &&
