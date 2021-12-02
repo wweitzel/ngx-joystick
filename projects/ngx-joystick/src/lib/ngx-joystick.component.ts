@@ -54,13 +54,13 @@ export class NgxJoystickComponent implements OnInit, OnDestroy {
         this.manager = nipplejs.create(this.options);
         this.setupEvents();
 
-        clearInterval(this.interval);
+        window.clearInterval(this.interval);
       }
     }, 100);
   }
 
   ngOnDestroy() {
-    clearInterval(this.interval);
+    window.clearInterval(this.interval);
     this.manager.destroy();
   }
 
