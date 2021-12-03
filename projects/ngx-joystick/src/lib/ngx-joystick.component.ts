@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import * as nipplejs from 'nipplejs';
 
 export interface JoystickEvent {
@@ -9,11 +9,13 @@ export interface JoystickEvent {
 @Component({
   selector: 'ngx-joystick',
   template: `
-  <div style="width: 100%; height: 100%" id="static"></div>
+  <div #joystickContainer style="width: 100%; height: 100%" id="static"></div>
   `,
   styles: [],
 })
 export class NgxJoystickComponent implements OnInit, OnDestroy {
+  @ViewChild('joystickContainer') joystickContainer: ElementRef;
+  
   @Input() options: nipplejs.JoystickManagerOptions;
   @Output() move = new EventEmitter<JoystickEvent>();
   // tslint:disable-next-line:no-output-native
@@ -32,23 +34,33 @@ export class NgxJoystickComponent implements OnInit, OnDestroy {
   @Output() plainRight = new EventEmitter<JoystickEvent>();
 
   manager: nipplejs.JoystickManager;
+  private interval: number;
 
   constructor(private el: ElementRef) {
   }
 
   ngOnInit() {
-    if (!this.options) {
-      this.options = this.getDefaultOptions();
-    } else {
-      this.options.zone = this.el.nativeElement;
-    }
+    this.interval = window.setInterval(() => {
+      if (
+        this.joystickContainer &&
+        this.joystickContainer.nativeElement.clientWidth &&
+        this.joystickContainer.nativeElement.clientHeight
+      ) {
+        if (!this.options) {
+            this.options = this.getDefaultOptions();
+        } else {
+            this.options.zone = this.el.nativeElement;
+        }
+        this.manager = nipplejs.create(this.options);
+        this.setupEvents();
 
-    this.manager = nipplejs.create(this.options);
-
-    this.setupEvents();
+        window.clearInterval(this.interval);
+      }
+    }, 100);
   }
 
   ngOnDestroy() {
+    window.clearInterval(this.interval);
     this.manager.destroy();
   }
 
