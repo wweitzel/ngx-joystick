@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ElementRef, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
 import * as nipplejs from 'nipplejs';
+import { fromEvent, Subscription } from 'rxjs';
 
 export interface JoystickEvent {
   event: nipplejs.EventData;
@@ -13,14 +14,13 @@ export interface JoystickEvent {
   `,
   styles: [],
 })
-export class NgxJoystickComponent implements OnInit, OnDestroy {
+export class NgxJoystickComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('joystickContainer') joystickContainer: ElementRef;
-  
+
   @Input() options: nipplejs.JoystickManagerOptions;
+
   @Output() move = new EventEmitter<JoystickEvent>();
-  // tslint:disable-next-line:no-output-native
   @Output() start = new EventEmitter<JoystickEvent>();
-  // tslint:disable-next-line:no-output-native
   @Output() end = new EventEmitter<JoystickEvent>();
   @Output() dir = new EventEmitter<JoystickEvent>();
   @Output() dirUp = new EventEmitter<JoystickEvent>();
@@ -34,7 +34,9 @@ export class NgxJoystickComponent implements OnInit, OnDestroy {
   @Output() plainRight = new EventEmitter<JoystickEvent>();
 
   manager: nipplejs.JoystickManager;
+
   private interval: number;
+  private touchMoveSubscription: Subscription = new Subscription();
 
   constructor(private el: ElementRef) {
   }
@@ -62,6 +64,14 @@ export class NgxJoystickComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     window.clearInterval(this.interval);
     this.manager.destroy();
+    this.touchMoveSubscription.unsubscribe();
+  }
+
+  ngAfterViewInit() {
+    this.touchMoveSubscription = fromEvent(this.el.nativeElement, 'touchmove').subscribe((event: TouchEvent) => {
+      event.preventDefault();
+      event.stopPropagation();
+    });
   }
 
   private getDefaultOptions(): nipplejs.JoystickManagerOptions {
