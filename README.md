@@ -9,9 +9,13 @@ https://wweitzel.github.io/ngx-joystick/
 ---
 
 ## Installation
-For Angular 12 projects
+For Angular 14 projects
 ```
 npm install ngx-joystick
+```
+For Angular 12 projects
+```
+npm install ngx-joystick@1.0.6
 ```
 For Angular 11 projects
 ```
@@ -29,7 +33,7 @@ https://www.npmjs.com/package/ngx-joystick
 
 Import `NgxJoystickModule` in your module. For example,
 ```typescript
-import { NgxJoystickModule } from 'ngx-joystick';  <--- Added
+import { NgxJoystickModule } from 'ngx-joystick'; // <--- Added
 
 @NgModule({
   declarations: [
@@ -37,7 +41,7 @@ import { NgxJoystickModule } from 'ngx-joystick';  <--- Added
   ],
   imports: [
     BrowserModule,
-    NgxJoystickModule <--- Added
+    NgxJoystickModule // <--- Added
   ],
   providers: [],
   bootstrap: [AppComponent]
