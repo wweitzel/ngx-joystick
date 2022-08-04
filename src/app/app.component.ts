@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { JoystickEvent, NgxJoystickComponent } from 'ngx-joystick';
-import { JoystickManagerOptions, JoystickOutputData } from 'nipplejs';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {JoystickEvent, NgxJoystickComponent} from 'ngx-joystick';
+import {JoystickManagerOptions, JoystickOutputData} from 'ngx-joystick/node_modules/nipplejs';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   staticOptions: JoystickManagerOptions = {
     mode: 'static',
-    position: { left: '50%', top: '50%' },
+    position: {left: '50%', top: '50%'},
     color: 'blue',
   };
 
