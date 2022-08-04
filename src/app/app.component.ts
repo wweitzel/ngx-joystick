@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {JoystickEvent, NgxJoystickComponent} from 'ngx-joystick';
-import {JoystickManagerOptions, JoystickOutputData} from 'ngx-joystick/node_modules/nipplejs';
+import {JoystickManagerOptions, JoystickOutputData} from 'nipplejs';
 
 @Component({
   selector: 'app-root',
