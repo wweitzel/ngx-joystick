@@ -133,6 +133,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngx-joystick-demo"
+    }
+  }
 }
