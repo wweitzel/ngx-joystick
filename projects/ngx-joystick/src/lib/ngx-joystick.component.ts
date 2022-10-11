@@ -15,9 +15,9 @@ export interface JoystickEvent {
   styles: [],
 })
 export class NgxJoystickComponent implements OnInit, OnDestroy, AfterViewInit {
-  @ViewChild('joystickContainer') joystickContainer: ElementRef;
+  @ViewChild('joystickContainer') joystickContainer!: ElementRef;
 
-  @Input() options: nipplejs.JoystickManagerOptions;
+  @Input() options!: nipplejs.JoystickManagerOptions;
 
   @Output() move = new EventEmitter<JoystickEvent>();
   @Output() start = new EventEmitter<JoystickEvent>();
@@ -33,9 +33,9 @@ export class NgxJoystickComponent implements OnInit, OnDestroy, AfterViewInit {
   @Output() plainLeft = new EventEmitter<JoystickEvent>();
   @Output() plainRight = new EventEmitter<JoystickEvent>();
 
-  manager: nipplejs.JoystickManager;
+  manager!: nipplejs.JoystickManager;
 
-  private interval: number;
+  private interval!: number;
   private touchMoveSubscription: Subscription = new Subscription();
 
   constructor(private el: ElementRef) {
@@ -68,7 +68,7 @@ export class NgxJoystickComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.touchMoveSubscription = fromEvent(this.el.nativeElement, 'touchmove').subscribe((event: TouchEvent) => {
+    this.touchMoveSubscription = fromEvent(this.el.nativeElement, 'touchmove').subscribe((event: any) => {
       event.preventDefault();
       event.stopPropagation();
     });
