@@ -9,9 +9,13 @@ https://wweitzel.github.io/ngx-joystick/
 ---
 
 ## Installation
-For Angular 14 projects
+For Angular 15 projects
 ```
 npm install ngx-joystick
+```
+For Angular 14 projects
+```
+npm install ngx-joystick@2.0.1
 ```
 For Angular 12 projects
 ```
