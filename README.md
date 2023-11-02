@@ -15,7 +15,7 @@ npm install ngx-joystick
 ```
 For Angular 15 projects
 ```
-npm install ngx-joystick@3.0.1
+npm install ngx-joystick@3.0.2
 ```
 For Angular 14 projects
 ```
