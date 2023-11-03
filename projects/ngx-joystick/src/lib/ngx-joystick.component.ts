@@ -63,7 +63,9 @@ export class NgxJoystickComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy() {
     window.clearInterval(this.interval);
-    this.manager.destroy();
+    if (this.manager) {
+      this.manager.destroy();
+    }
     this.touchMoveSubscription.unsubscribe();
   }
 
