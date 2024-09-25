@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { JoystickEvent, NgxJoystickComponent } from 'ngx-joystick';
+import { JoystickEvent, NgxJoystickComponent } from '../../projects/ngx-joystick/src/public-api';
 import { JoystickManagerOptions, JoystickOutputData } from 'nipplejs';
 
 @Component({

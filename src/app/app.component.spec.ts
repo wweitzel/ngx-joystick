@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { NgxJoystickModule } from 'ngx-joystick';
+import { NgxJoystickModule } from '../../projects/ngx-joystick/src/public-api';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
