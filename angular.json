@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-joystick-demo:build"
+            "buildTarget": "ngx-joystick-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-joystick-demo:build:production"
+              "buildTarget": "ngx-joystick-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-joystick-demo:build"
+            "buildTarget": "ngx-joystick-demo:build"
           }
         },
         "test": {
@@ -113,7 +113,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ngx-joystick/tsconfig.lib.json",
             "project": "projects/ngx-joystick/ng-package.json"
