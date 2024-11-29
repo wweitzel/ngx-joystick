@@ -1,3 +1,6 @@
+# Warning: This Project is No Longer Maintained
+This project is now archived and will no longer be updated to new angular versions.
+
 # NgxJoystick
 
 NgxJoystick is an angular joystick component. It is a wrapper around the [nipplejs](https://yoannmoi.net/nipplejs/) library providing joystick functionality to your angular application.
